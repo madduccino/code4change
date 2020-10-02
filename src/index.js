@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import App from "./App";
 import * as serviceWorker from './serviceWorker';
+import Project from './components/Project';
+import ThankYou from './components/ThankYou';
+import Results from './components/Results';
+import Spring2020 from './components/Spring2020';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+        <Route exact path='/' component={App} />
+        <Route exact path={`/:id(\\d+)`} 
+        render={(props) => <Project {...props} />}/>
+        <Route exact path='/thankyou' component={ThankYou} />
+        <Route exact path='/results' component={Results} />
+        <Route exact path='/spring2020' component={Spring2020} />
+
+
+
+        {/* <Route path="/:id" render={(props) => <Project text="Hello, " {...props} />} /> */}
+        {/* <Route 
+          path='/'
+          render={(props) => <App {...props} id={true} />}
+/> */}
+  </Router>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
