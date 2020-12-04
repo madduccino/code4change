@@ -139,19 +139,67 @@ loadVoteCount() {
 
   render() {
 
-      return (
+    return (
  
       <React.Fragment>
  
        <div className="header">       
-  
-   <h3>The Fall 2020 Code 4 Change Challenge is coming soon! Visit The Coding Space <a href="https://thecodingspace.com/code4change">website</a> to find out how to participate. Here's a look at previous contests:</h3> 
-    <a href="/spring2020">Spring 2020</a>
+  <h1>Time to Vote</h1>
+  Click the gong to vote for your favorite projects. You can vote for up to 5. One vote per person!
+   {/* <h3> Drawing on the <a target="_blank" href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">UN's 17 Sustainable Development Goals</a>, coders were invited to use their innovation, creativity, and resourcefulness to address a global issue. Here's what they created.</h3>  */}
+
    </div>
 
-   
+        <div className="grid">
+        {this.state.showPopup ?  
+        <Popup submitVote={this.updateVotes} text="You've reached 5 votes! Click the button below to submit."  
+
+          closePopup={this.togglePopup.bind(this)} />  : null  }  
+          
+              {this.state.submissions.map(submission => (
+                 <div key={submission.uid}>
+                     <div className="card">
+
+                     <Link to={{                   
+                    pathname:  submission.uid,
+                    firstName: submission.firstName
+                  }}
+                   ><img src= {submission.thumbnail} /></Link>
+
+                    
+                    <div className="card-content">
+                      <h2>{submission.projName}</h2>
+                       <Link to={{                   
+                       pathname:  submission.uid,
+                       firstName: submission.firstName
+                     }}
+                   >View Project</Link>
+                    </div>
+                      <Buttons
+                  id={submission.uid} 
+                  votes={submission.votes}
+                  onVote={this.handleEvent}
+                  />
+                  
+                   </div>
+               
+
+                  </div>
+              ))}
+
+
+      </div>
+
       </React.Fragment>
     );
+ 
+      // <>
+      //   <div className="header">       
+      //   <h3>The Fall 2020 Code 4 Change Challenge is coming soon! Visit The Coding Space <a href="https://thecodingspace.com/code4change">website</a> to find out how to participate. Here's a look at previous contests:</h3> 
+      //   <a href="/spring2020">Spring 2020</a>
+      //  </div>
+      // </>
+    
 }}
 
 class Buttons extends React.Component {

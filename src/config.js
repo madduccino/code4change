@@ -1,7 +1,7 @@
 const config = {
-  apiKey: "AIzaSyCLCvh_WyveRDTS172okZNBRZ9WUz-_3PE",
-  authDomain: "code-4-change.firebaseapp.com",
-  databaseURL: "https://code-4-change.firebaseio.com",
+  apiKey: "AIzaSyB7vN1QdWPBqFDHNIQGpAwSqjgq8HsRQhI",
+  authDomain: "kids-teaching-kids.firebaseapp.com",
+  databaseURL: "https://kids-teaching-kids.firebaseio.com",
 };
 
   export default config;

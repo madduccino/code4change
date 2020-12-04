@@ -18,8 +18,6 @@ ReactDOM.render(
         <Route exact path='/results' component={Results} />
         <Route exact path='/spring2020' component={Spring2020} />
 
-
-
         {/* <Route path="/:id" render={(props) => <Project text="Hello, " {...props} />} /> */}
         {/* <Route 
           path='/'

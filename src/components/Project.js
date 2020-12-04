@@ -127,7 +127,7 @@ class Project extends React.Component{
         <div id="about">
         <h2>Coder Profile</h2>
            <p><strong>Name(s):</strong> {this.state.firstName}</p>
-           <p><strong>Team Name:</strong> {this.state.teamName}</p>
+          {this.state.teamName && ( <p><strong>Team Name:</strong> {this.state.teamName}</p>)}
          <p><strong>Age(s):</strong> {this.state.age}</p>
            <p><strong>Grade(s):</strong> {this.state.grade}</p>
          </div>
@@ -191,7 +191,6 @@ render() {
  <p><strong>Name:</strong> {this.props.projName}</p>
 
  <p><strong>Description:</strong> {this.props.desc}</p>
- <p><strong>Sustainable Development Goal:</strong> {this.props.sdg}</p>
  <div><a href="/">Back</a></div>
 
  </div> 
