@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Firebase from "firebase";
-import config from "./config";
-import "./App.css";
-import Popup from "./components/Popup";
-
-Firebase.initializeApp(config);
+import config from "../config";
+import "../App.css";
+import Popup from "./Popup";
 
 let totalPoints = [];
 
-class App extends React.Component {
+class Fall2020 extends React.Component {
   constructor(props) {
     super(props);
 
@@ -138,7 +136,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <div className="header">
           <h1>Time to Vote</h1>
           Click the gong to vote for your favorite projects. You can vote for up
@@ -187,8 +185,15 @@ class App extends React.Component {
             </div>
           ))}
         </div>
-      </React.Fragment>
+      </>
     );
+
+    // <>
+    //   <div className="header">
+    //   <h3>The Fall 2020 Code 4 Change Challenge is coming soon! Visit The Coding Space <a href="https://thecodingspace.com/code4change">website</a> to find out how to participate. Here's a look at previous contests:</h3>
+    //   <a href="/spring2020">Spring 2020</a>
+    //  </div>
+    // </>
   }
 }
 
@@ -388,4 +393,4 @@ class SDG extends React.Component {
   }
 }
 
-export default App;
+export default Fall2020;

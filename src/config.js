@@ -1,8 +1,7 @@
 const config = {
-  apiKey: "AIzaSyB7vN1QdWPBqFDHNIQGpAwSqjgq8HsRQhI",
-  authDomain: "kids-teaching-kids.firebaseapp.com",
-  databaseURL: "https://kids-teaching-kids.firebaseio.com",
+  apiKey: "AIzaSyAxivVqrTXlkSfB2UysZhfhjVshEZQBEJM",
+  authDomain: "code-4-change-spring-2021.firebaseapp.com",
+  databaseURL: "https://code-4-change-spring-2021-default-rtdb.firebaseio.com",
 };
 
-  export default config;
-
+export default config;
